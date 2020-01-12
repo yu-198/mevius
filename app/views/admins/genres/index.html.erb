@@ -1,0 +1,21 @@
+<div>
+	<h1>ジャンル管理画面</h1>
+	<%= form_for(@genre, url:admins_genres_path) do |f| %>
+
+		<label>ジャンルの追加</label>
+		<%= f.text_field :name %>
+		<%= f.submit "追加"%>
+	<% end %>
+	<table>
+		<tr>ジャンル一覧</tr>
+			<% @genres.each do |genre| %>
+						<td><%= genre.name%></td>
+						<td></td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+			<% end %>
+	</table>
+</div>

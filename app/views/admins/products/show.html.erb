@@ -1,0 +1,47 @@
+<div>
+	<div>
+		<h1>商品詳細画面</h1>
+		<%= attachment_image_tag @product, :image,:fill, 50,50 %>
+	</div>
+	<div>
+		<table>
+				<tr>
+					<th>商品ID</th>
+					<td><%= @product.id%></td>
+				</tr>
+				<tr>
+					<th>商品名</th>
+					<td><%= @product.name%></td>
+				</tr>
+				<tr>
+					<th>商品説明</th>
+					<td><%= @product.introduction%></td>
+				</tr>
+				<tr>
+					<th>ジャンル</th>
+					<td><%= @product.genre.name%></td>
+				</tr>
+				<tr>
+					<th>税込価格</th>
+					<td><%= @product.price%></td>
+				</tr>
+				<tr>
+					<th>販売ステータス</th>
+					<td>
+						<% if @product.is_stopped == false %>
+		    				販売中
+		  				<% elsif @product.is_stopped == true %>
+		    				販売停止
+		 				 <% end %>
+		 			</td>
+				</tr>
+				<tr>
+					<th><%= link_to edit_admins_product_path(@product.id) do %>
+						<label>編集する</label>
+						<% end %>
+					</th>
+					<td></td>
+				</tr>
+		</table>
+	</div>
+</div>
