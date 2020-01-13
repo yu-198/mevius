@@ -1,0 +1,15 @@
+<div>
+	<%= attachment_image_tag @product, :image, :fill, 200,200 %>
+</div>
+<div>
+	<%= @product.introduction %>
+</div>
+<div>
+	<%= @product.name %>
+	<%= addTax(@product.price)%>円
+	<%= form_for(@cart_item) do |f|%>
+		<%= f.hidden_field :product_id %>
+		<%= f.submit "カートに入れる" %>
+		<%= f.select :quantity, [1,2,3,4,5,6,7,8,9,10] %>
+	<% end %>
+</div>

@@ -1,0 +1,17 @@
+<div>
+	<span><strong>ジャンルで検索</strong></span>
+	<% @genres.each do |genre| %>
+		<%= link_to root_path(genre: genre.id) do %>
+			<span><%= genre.name %></span>
+		<% end %>
+	<% end %>
+</div>
+<div>
+	<% @products.each do |product|%>
+		<%= link_to product_path(product) do %>
+			<%= attachment_image_tag product, :image, :fill, 200, 200 %>
+		<% end %></br>
+		<%= product.name %>
+		<%= product.price %>円
+	<% end %>
+</div>
