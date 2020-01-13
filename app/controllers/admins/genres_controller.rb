@@ -15,23 +15,23 @@ class Admins::GenresController < ApplicationController
 		genre = Genre.find(params[:id])
 	end
 	def update
-		@genre = Genre.find(params[:id])
-		@genre.name = params[:name][@genre.id.to_s]
+		genre = Genre.find(params[:id])
+		genre.name = params[:name][@genre.id.to_s]
 		genre.save
 		redirect_to admins_genres_path
 	end
 
 	def enable
 		@genre = Genre.find(params[:id])
-		@genre.is_disable == false
-		genre.save
+		@genre.is_disable = false
+		@genre.save
 		redirect_to admins_genres_path
 	end
 
 	def disable
 		@genre = Genre.find(params[:id])
-		genre.is_disable == true
-		genre.save
+		@genre.is_disable = true
+		@genre.save
 		redirect_to admins_genres_path
 	end
 
