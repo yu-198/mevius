@@ -13,6 +13,7 @@
 	<label>税抜価格</label>
 	<%= f.text_field :price %>
 	<label>販売ステータス</label>
+	<%= f.select :is_stopped,{販売中:false, 販売停止:true}%>
 	<%= f.submit "登録する"%>
 	<% end %>
 
