@@ -16,11 +16,11 @@ Rails.application.routes.draw do
     get 'about' => 'home#about'
     get 'admins' => 'admins#order#index'
 
-    namespace :admins do
-        resources :genres, only: [:index, :create, :update] do
+    namespace :admin do
+        resources :genres, only: [:index, :create, :update,] do
       member do
-        post :enable
-        post :disable
+        patch :enable
+        patch :disable
       end
     end
      resources :users, only: [:index, :show, :edit, :update]
